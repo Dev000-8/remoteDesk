@@ -138,7 +138,7 @@ Please ensure that you are running these commands from the root of the KOKDesk r
 - **[src/server]**: audio/clipboard/input/video services, and network connections
 - **[src/client.rs]**: start a peer connection
 - **[src/rendezvous_mediator.rs]**: Communicate with [kokdesk-server], wait for remote direct (TCP hole punching) or relayed connection
-- **[src/platform]: platform specific code
+- **[src/platform]**: platform specific code
 - **[flutter]**: Flutter code for mobile
 - **[flutter/web/js]**: Javascript for Flutter web client
 
