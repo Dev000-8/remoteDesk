@@ -46,16 +46,13 @@ class ConnectStatus: Reactor.Component {
             return translate('connecting_status');
         }
         if (!handler.using_public_server()) return translate('Ready');
-        return <span>{translate("Ready")}, <span .link #setup-server>{translate("setup_server_tip")}</span></span>;
+        return <span>{translate("Ready")}</span>;
     }
 
     event click $(#start-service) () {
         handler.set_option("stop-service", "");
     }
 
-    event click $(#setup-server) () {
-        handler.open_url("https://rustdesk.com/blog/id-relay-set/");
-    }
 }
 
 function createNewConnect(id, type) {
@@ -267,11 +264,9 @@ class MyIdMenu: Reactor.Component {
         var name = handler.get_app_name();
         msgbox("custom-nocancel-nook-hasclose", "About " + name, "<div style='line-height: 2em'> \
             <div>Version: " + handler.get_version() + " \
-            <div .link .custom-event url='https://rustdesk.com/privacy'>Privacy Statement</div> \
-            <div .link .custom-event url='https://rustdesk.com'>Website</div> \
-            <div style='background: #2c8cff; color: white; padding: 1em; margin-top: 1em;'>Copyright &copy; 2022 Purslane Ltd.\
+            <div .link .custom-event url=''>Website</div> \
+            <div style='background: #2c8cff; color: white; padding: 1em; margin-top: 1em;'>Copyright &copy; 2022.\
             <br />" + handler.get_license() + " \
-            <p style='font-weight: bold'>Made with heart in this chaotic world!</p>\
             </div>\
         </div>", function(el) {
             if (el && el.attributes) {
@@ -444,6 +439,9 @@ class App: Reactor.Component
         app = this;
     }
 
+    /*{software_update_url ? <UpdateMe /> : ""}
+    {is_win && handler.is_installed() && !software_update_url && handler.is_installed_lower_version() ? <UpgradeMe /> : ""}*/
+
     function render() {
         var is_can_screen_recording = handler.is_can_screen_recording(false);
         return
@@ -465,9 +463,8 @@ class App: Reactor.Component
                             <Password />
                         </div>
                     </div>
-                    {!is_win || handler.is_installed() ? "": <InstallMe />}
-                    {software_update_url ? <UpdateMe /> : ""}
-                    {is_win && handler.is_installed() && !software_update_url && handler.is_installed_lower_version() ? <UpgradeMe /> : ""}
+                    {!is_win || handler.is_installed() ? "": <InstallMe />} 
+                    
                     {is_can_screen_recording ? "": <CanScreenRecording />}
                     {is_can_screen_recording && !handler.is_process_trusted(false) ? <TrustMe /> : ""}
                     {!service_stopped && is_can_screen_recording && handler.is_process_trusted(false) && handler.is_installed() && !handler.is_installed_daemon(false) ? <InstallDaemon /> : ""}
