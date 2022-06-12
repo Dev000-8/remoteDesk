@@ -131,15 +131,15 @@ Please ensure that you are running these commands from the root of the KOKDesk r
 
 ## File Structure
 
-- **[libs/hbb_common]: video codec, config, tcp/udp wrapper, protobuf, fs functions for file transfer, and some other utility functions
-- **[libs/scrap]: screen capture
-- **[libs/enigo]: platform specific keyboard/mouse control
-- **[src/ui]: GUI
-- **[src/server]: audio/clipboard/input/video services, and network connections
-- **[src/client.rs]: start a peer connection
-- **[src/rendezvous_mediator.rs]: Communicate with [kokdesk-server], wait for remote direct (TCP hole punching) or relayed connection
+- **[libs/hbb_common]**: video codec, config, tcp/udp wrapper, protobuf, fs functions for file transfer, and some other utility functions
+- **[libs/scrap]**: screen capture
+- **[libs/enigo]**: platform specific keyboard/mouse control
+- **[src/ui]**: GUI
+- **[src/server]**: audio/clipboard/input/video services, and network connections
+- **[src/client.rs]**: start a peer connection
+- **[src/rendezvous_mediator.rs]**: Communicate with [kokdesk-server], wait for remote direct (TCP hole punching) or relayed connection
 - **[src/platform]: platform specific code
-- **[flutter]: Flutter code for mobile
-- **[flutter/web/js]: Javascript for Flutter web client
+- **[flutter]**: Flutter code for mobile
+- **[flutter/web/js]**: Javascript for Flutter web client
 
 
