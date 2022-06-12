@@ -131,15 +131,15 @@ Please ensure that you are running these commands from the root of the KOKDesk r
 
 ## File Structure
 
-- **[libs/hbb_common](https://github.com/oliver90129/remoteDesk/kokdesk/libs/hbb_common)**: video codec, config, tcp/udp wrapper, protobuf, fs functions for file transfer, and some other utility functions
-- **[libs/scrap](https://github.com/oliver90129/remoteDesk/kokdesk/libs/scrap)**: screen capture
-- **[libs/enigo](https://github.com/oliver90129/remoteDesk/kokdesk/libs/enigo)**: platform specific keyboard/mouse control
-- **[src/ui](https://github.com/oliver90129/remoteDesk/kokdesk//src/ui)**: GUI
-- **[src/server](https://github.com/oliver90129/remoteDesk/kokdesk/src/server)**: audio/clipboard/input/video services, and network connections
-- **[src/client.rs](https://github.com/oliver90129/remoteDesk/kokdesk/src/client.rs)**: start a peer connection
-- **[src/rendezvous_mediator.rs](https://github.com/oliver90129/remoteDesk/kokdesk/src/rendezvous_mediator.rs)**: Communicate with [kokdesk-server](https://github.com/oliver90129/remoteDesk/kokdesk-server), wait for remote direct (TCP hole punching) or relayed connection
-- **[src/platform](https://github.com/oliver90129/remoteDesk/kokdesk/src/platform)**: platform specific code
-- **[flutter](https://github.com/oliver90129/remoteDesk/kokdesk/flutter)**: Flutter code for mobile
-- **[flutter/web/js](https://github.com/oliver90129/remoteDesk/kokdesk/flutter/web/js)**: Javascript for Flutter web client
+- **[libs/hbb_common]: video codec, config, tcp/udp wrapper, protobuf, fs functions for file transfer, and some other utility functions
+- **[libs/scrap]: screen capture
+- **[libs/enigo]: platform specific keyboard/mouse control
+- **[src/ui]: GUI
+- **[src/server]: audio/clipboard/input/video services, and network connections
+- **[src/client.rs]: start a peer connection
+- **[src/rendezvous_mediator.rs]: Communicate with [kokdesk-server], wait for remote direct (TCP hole punching) or relayed connection
+- **[src/platform]: platform specific code
+- **[flutter]: Flutter code for mobile
+- **[flutter/web/js]: Javascript for Flutter web client
 
 
