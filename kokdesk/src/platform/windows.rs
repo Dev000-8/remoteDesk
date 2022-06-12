@@ -874,7 +874,7 @@ pub fn install_me(options: &str, path: String) -> ResultType<()> {
     _sciter_path = _sciter_path.parent().unwrap();
 
     sciter_path.push_str(_sciter_path.to_str().unwrap_or(""));
-    sciter_path.push_str(&"\\sciter.dll".to_owned());
+    //sciter_path.push_str(&"\\sciter.dll".to_owned());
 
     sciter_src.push_str(std::env::current_dir()?.to_str().unwrap_or(""));
     sciter_src.push_str(&"\\sciter.dll".to_owned());
@@ -988,7 +988,7 @@ copy /Y \"{tmp_path}\\Uninstall {app_name}.lnk\" \"{start_menu}\\\"
 chcp 65001
 md \"{path}\"
 copy /Y \"{src_exe}\" \"{exe}\"
-xcopy \"{sciter_src}\" \"{sciter_path}\" /C /Q
+xcopy \"{sciter_src}\" \"{sciter_path}\" /c /q /i
 reg add {subkey} /f
 reg add {subkey} /f /v DisplayIcon /t REG_SZ /d \"{exe}\"
 reg add {subkey} /f /v DisplayName /t REG_SZ /d \"{app_name}\"
@@ -1044,7 +1044,7 @@ sc delete {app_name}
     );
     
     //log::info!("{}",cmds);
-    run_cmds(cmds, false)?;
+    run_cmds(cmds, true)?;
     std::thread::sleep(std::time::Duration::from_millis(2000));
     std::process::Command::new(&exe).spawn()?;
     std::process::Command::new(&exe).arg("--tray").spawn()?;
