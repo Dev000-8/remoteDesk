@@ -24,9 +24,6 @@ fn main() {
         println!("{}", x.to_str().unwrap());
     }
     
-    
-
-
     //args.push("--install".to_owned());
     let mut i = 0;
     let mut is_setup = false;
