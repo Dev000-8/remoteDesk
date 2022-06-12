@@ -13,13 +13,11 @@ class Install: Reactor.Component {
             </div>
             <div><button|checkbox #startmenu checked>{translate('Create start menu shortcuts')}</button></div>
             <div><button|checkbox #desktopicon checked>{translate('Create desktop icon')}</button></div>
-            <div #aggrement .link style="margin-top: 2em;">{translate('End-user license agreement')}</div>
-            <div>{translate('agreement_tip')}</div>
-            <div style="height: 1px; background: gray; margin-top: 1em" />
+           
             <div style="text-align: right;">
                 <progress style={"color:" + color} style="display: none" /> 
                 <button .button id="cancel" .outline style="margin-right: 2em;">{translate('Cancel')}</button>
-                <button .button id="submit">{translate('Accept and Install')}</button>
+                <button .button id="submit">{translate('Install')}</button>
                 {handler.show_run_without_install() && <button .button #run-without-install .outline style="margin-left: 2em;">
                     {translate('Run without install')}
                 </button>}
@@ -44,10 +42,6 @@ class Install: Reactor.Component {
           install_path += handler.get_app_name();
           $(#path_input).value = install_path;
         }
-    }
-
-    event click $(#aggrement) {
-        view.open_url("http://rustdesk.com/privacy");
     }
 
     event click $(#submit) {
